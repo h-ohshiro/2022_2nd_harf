@@ -68,7 +68,8 @@ public class main {
 		
 		// mapは戻り値の型を変えることができる（<R> Stream<R> map(Function<? super T,? extends R> mapper)）
 		// isMaleのbooleanをリスト化
-		final List<Boolean> genderList = personList.stream().map(person -> person.isMale()).filter(gender -> gender.booleanValue()).collect(Collectors.toList());
+		final List<Boolean> genderList = personList.stream().map(person -> person.isMale())
+				.filter(gender -> gender.booleanValue()).collect(Collectors.toList());
 		genderList.forEach((gender) -> {
 			System.out.println(gender); // true, true, true, true, true（男性の数だけ返っている）
 		});
